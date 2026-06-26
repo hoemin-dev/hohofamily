@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HoHo Family 가입신청</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+    <div class="access-page">
+        <div class="access-card signup-card">
+
+            <div class="logo">🏠</div>
+
+            <h1>가입신청</h1>
+
+            <p class="subtitle">
+                가족 확인 후 승인됩니다.
+            </p>
+
+            <form class="signup-form">
+                <label>
+                    이름
+                    <input type="text" name="name" placeholder="이름을 입력하세요" required>
+                </label>
+
+                <label>
+                    이메일
+                    <input type="email" name="email" placeholder="example@email.com" required>
+                </label>
+
+                <label>
+                    생일
+                    <input type="date" name="birthday" required>
+                </label>
+
+                <div class="birth-type">
+                    <label>
+                        <input type="radio" name="calendarType" value="solar" checked>
+                        양력
+                    </label>
+
+                    <label>
+                        <input type="radio" name="calendarType" value="lunar">
+                        음력
+                    </label>
+                </div>
+
+                <button class="enter-btn" type="submit">
+                    신청하기
+                </button>
+            </form>
+
+            <div class="signup">
+                이미 신청하셨나요?
+                <a href="/">처음으로</a>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

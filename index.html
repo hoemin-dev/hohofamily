@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,35 +8,51 @@
     <title>HoHo Family</title>
 
     <link rel="stylesheet" href="/assets/css/style.css">
+
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#2d6cdf">
+
+    <link rel="apple-touch-icon" href="/assets/icons/icon-192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="HoHo Family">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
 </head>
 
 <body>
 
-<div class="access-page">
+    <div class="access-page">
 
-    <div class="access-card">
+        <div class="access-card">
 
-        <div class="logo">
-            🏠
-        </div>
+            <div class="logo">
+                🏠
+            </div>
 
-        <h1>HoHo Family</h1>
+            <h1>HoHo Family</h1>
 
-        <p class="subtitle">
-            Welcome Home
-        </p>
+            <p class="subtitle">
+                호호네 가족이야기에 오신 걸 환영합니다
+            </p>
 
-        <button class="enter-btn">
-            <a class="enter-btn" href="/app/home.html">Enter Home</a>
-        </button>
+            <a class="enter-btn" href="/app/home.html">접속하기</a>
 
-        <div class="footer">
-            Protected by Cloudflare Access
+            <button id="installPwaBtn" class="pwa-btn" hidden>
+                📱 앱처럼 설치하기
+            </button>
+
+            <div class="signup">
+                가족이신가요?
+                <a href="/app/signup.html">가입신청</a>
+            </div>
+
+            <div class="footer">
+                Protected by Cloudflare Access
+            </div>
+
         </div>
 
     </div>
-
-</div>
-
+    <script src="/assets/js/pwa.js"></script>
 </body>
+
 </html>
