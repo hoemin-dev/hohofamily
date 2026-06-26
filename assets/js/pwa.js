@@ -10,23 +10,21 @@ const installBtn = document.getElementById("installPwaBtn");
 window.addEventListener("beforeinstallprompt", (event) => {
   event.preventDefault();
   deferredPrompt = event;
-
-  if (installBtn) {
-    installBtn.hidden = false;
-  }
 });
 
-if (installBtn) {
-  installBtn.addEventListener("click", async () => {
-    if (!deferredPrompt) {
-      alert("iPhone은 Safari 공유 버튼(□↑)에서 '홈 화면에 추가'를 눌러주세요.");
-      return;
-    }
-
+installBtn?.addEventListener("click", async () => {
+  if (deferredPrompt) {
     deferredPrompt.prompt();
     await deferredPrompt.userChoice;
 
     deferredPrompt = null;
-    installBtn.hidden = true;
-  });
-}
+    return;
+  }
+
+  alert(
+    "앱 설치 방법\n\n" +
+    "Android Chrome: 메뉴(⋮) → 앱 설치\n" +
+    "Samsung Internet: 메뉴 → 현재 페이지 추가 → 홈 화면\n" +
+    "iPhone Safari: 공유(□↑) → 홈 화면에 추가"
+  );
+});
