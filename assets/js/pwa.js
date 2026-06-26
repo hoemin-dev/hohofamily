@@ -29,3 +29,4 @@ if (installBtn) {
     deferredPrompt = null;
     installBtn.hidden = true;
   });
+}
