@@ -7,17 +7,38 @@ if ("serviceWorker" in navigator) {
 let deferredPrompt;
 const installBtn = document.getElementById("installPwaBtn");
 
+function isStandaloneApp() {
+  return (
+    window.matchMedia("(display-mode: standalone)").matches ||
+    window.navigator.standalone === true
+  );
+}
+
+if (installBtn && isStandaloneApp()) {
+  installBtn.style.display = "none";
+}
+
 window.addEventListener("beforeinstallprompt", (event) => {
   event.preventDefault();
   deferredPrompt = event;
+
+  if (installBtn && !isStandaloneApp()) {
+    installBtn.style.display = "block";
+  }
 });
 
 installBtn?.addEventListener("click", async () => {
+  if (isStandaloneApp()) {
+    installBtn.style.display = "none";
+    return;
+  }
+
   if (deferredPrompt) {
     deferredPrompt.prompt();
     await deferredPrompt.userChoice;
 
     deferredPrompt = null;
+    installBtn.style.display = "none";
     return;
   }
 
